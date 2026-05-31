@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://2a18rpqknoec"]
+
+[ext_resource type="Script" uid="uid://dldyqrskb4pt1" path="res://Scripts/title_screen.gd" id="1_klylv"]
+
+[node name="TitleScreen" type="Control" unique_id=2067873245]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_klylv")
+
+[node name="StartButton" type="Button" parent="." unique_id=249292355]
+layout_mode = 0
+offset_left = 381.0
+offset_top = 233.0
+offset_right = 740.0
+offset_bottom = 371.0
+text = "Start	"
+
+[node name="QuitButton" type="Button" parent="." unique_id=1256388815]
+layout_mode = 0
+offset_left = 381.0
+offset_top = 423.0
+offset_right = 740.0
+offset_bottom = 561.0
+text = "Quit	"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

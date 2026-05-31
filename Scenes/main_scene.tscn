@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cmesnsomldwbi"]
 
-[ext_resource type="PackedScene" uid="uid://b548bppnpn02l" path="res://src/player/player.tscn" id="1_1k4gi"]
-[ext_resource type="Script" uid="uid://dmiceh8sy7m03" path="res://src/player/player.gd" id="2_6fy3g"]
+[ext_resource type="PackedScene" uid="uid://b548bppnpn02l" path="res://Scenes/player.tscn" id="1_1k4gi"]
+[ext_resource type="Script" uid="uid://dmiceh8sy7m03" path="res://Scripts/player.gd" id="2_6fy3g"]
+
 
 [node name="World" type="Node2D" unique_id=1932867374]
 

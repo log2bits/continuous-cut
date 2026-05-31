@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Continuous Cut"
+run/main_scene="uid://2a18rpqknoec"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]
