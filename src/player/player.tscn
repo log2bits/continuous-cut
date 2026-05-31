@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://b548bppnpn02l"]
 
+[ext_resource type="Texture2D" uid="uid://dirlgat5fp3yh" path="res://assets/sprites/TempPlayer.png" id="1_4anbu"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_qnmj6"]
 radius = 16.0
 
@@ -7,3 +9,6 @@ radius = 16.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1402641244]
 shape = SubResource("CircleShape2D_qnmj6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=656322906]
+texture = ExtResource("1_4anbu")
