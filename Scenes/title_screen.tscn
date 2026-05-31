@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://2a18rpqknoec"]
 
 [ext_resource type="Script" uid="uid://dldyqrskb4pt1" path="res://Scripts/title_screen.gd" id="1_klylv"]
+[ext_resource type="FontFile" uid="uid://dbrln1wqrwok2" path="res://assets/Fonts/dogicapixel.ttf" id="2_p3fck"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klylv"]
 bg_color = Color(0.92156863, 0.8980392, 0.80784315, 1)
@@ -10,12 +11,52 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 shadow_size = 8
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gxqj"]
+bg_color = Color(0.92156863, 0.8901961, 0.8509804, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twnyg"]
+bg_color = Color(0.92156863, 0.8901961, 0.8509804, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+shadow_size = 8
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3fck"]
 bg_color = Color(0.92156863, 0.8980392, 0.80784315, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55kwv"]
+bg_color = Color(0.92156863, 0.8901961, 0.8509804, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12m1t"]
+bg_color = Color(0.92156863, 0.8901961, 0.8509804, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
 shadow_size = 8
 
 [node name="TitleScreen" type="Control" unique_id=2067873245]
@@ -29,34 +70,52 @@ script = ExtResource("1_klylv")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=65834139]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.7214506
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -197.0
-offset_top = 40.0
-offset_right = 197.0
-offset_bottom = 212.0
+anchor_bottom = 0.7214506
+offset_left = -230.0
+offset_top = -114.5
+offset_right = 230.0
+offset_bottom = 114.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 62
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
 
 [node name="StartButton" type="Button" parent="VBoxContainer" unique_id=249292355]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.24313726, 0.13725491, 0.17254902, 1)
+theme_override_colors/font_focus_color = Color(0.24313726, 0.13725491, 0.17254902, 1)
+theme_override_colors/font_pressed_color = Color(0.24313726, 0.13725491, 0.17254902, 1)
+theme_override_colors/font_hover_color = Color(0.24313726, 0.13725491, 0.17254902, 1)
+theme_override_fonts/font = ExtResource("2_p3fck")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_klylv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4gxqj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_twnyg")
 button_mask = 3
-text = "Start	"
+text = "Start"
+expand_icon = true
 
 [node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1256388815]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.24313726, 0.13725491, 0.17254902, 1)
+theme_override_colors/font_focus_color = Color(0.24313726, 0.13725491, 0.17254902, 1)
+theme_override_colors/font_pressed_color = Color(0.24313726, 0.13725491, 0.17254902, 1)
+theme_override_colors/font_hover_color = Color(0.24313726, 0.13725491, 0.17254902, 1)
+theme_override_fonts/font = ExtResource("2_p3fck")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_p3fck")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_55kwv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_12m1t")
 button_mask = 3
-text = "Quit	"
+text = "Quit"
+expand_icon = true
 
 [node name="Label" type="Label" parent="." unique_id=1683374814]
 layout_mode = 1
@@ -69,6 +128,7 @@ offset_right = 60.0
 offset_bottom = 94.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.92156863, 0.8980392, 0.80784315, 1)
+theme_override_fonts/font = ExtResource("2_p3fck")
 theme_override_font_sizes/font_size = 72
 text = "Continuous Cut"
 
@@ -86,6 +146,7 @@ offset_bottom = -51.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.92156863, 0.8980392, 0.80784315, 1)
+theme_override_fonts/font = ExtResource("2_p3fck")
 theme_override_font_sizes/font_size = 24
 text = "by Logan MacAskill and Jack Seales"
 
