@@ -1,0 +1,20 @@
+# Godot 4+ specific ignores
+.godot/
+
+# Godot 3 specific ignores (Keep if upgrading older projects)
+.import/
+
+# Imported translations
+*.translation
+
+# Export profiles and binaries (uncomment if you want to keep secrets local)
+# export_presets.cfg
+# export_credentials.cfg
+
+# Build outputs
+build/
+bin/
+
+# Crash dumps and temporary lock files
+*.log
+*.tmp
