@@ -16,9 +16,10 @@ func _physics_process(delta: float) -> void:
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		if collision.get_collider() == player:
-			player.take_damage(damage)
 			
-			queue_free()
+			if not is_queued_for_deletion():
+				player.take_damage(damage)
+				queue_free()
 			
 func _ready() -> void:
 	add_to_group("enemies")
