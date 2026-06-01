@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://2a18rpqknoec"]
+[gd_scene format=3 uid="uid://csx6g843lyewk"]
 
-[ext_resource type="Script" uid="uid://dldyqrskb4pt1" path="res://Scripts/title_screen.gd" id="1_klylv"]
-[ext_resource type="FontFile" uid="uid://dbrln1wqrwok2" path="res://assets/Fonts/dogicapixel.ttf" id="2_p3fck"]
+[ext_resource type="Script" uid="uid://robajfnebdlq" path="res://Scripts/death_screen.gd" id="1_rwas2"]
+[ext_resource type="FontFile" uid="uid://dbrln1wqrwok2" path="res://assets/Fonts/dogicapixel.ttf" id="2_tseak"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klylv"]
 bg_color = Color(0.92156863, 0.8980392, 0.80784315, 1)
@@ -59,14 +59,14 @@ expand_margin_right = 4.0
 expand_margin_bottom = 4.0
 shadow_size = 8
 
-[node name="title_screen" type="Control" unique_id=2067873245]
+[node name="death_screen" type="Control" unique_id=2067873245]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_klylv")
+script = ExtResource("1_rwas2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=65834139]
 layout_mode = 1
@@ -85,20 +85,20 @@ theme_override_constants/separation = 62
 metadata/_edit_group_ = true
 metadata/_edit_use_anchors_ = true
 
-[node name="start_button" type="Button" parent="VBoxContainer" unique_id=249292355]
+[node name="restart_button" type="Button" parent="VBoxContainer" unique_id=249292355]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.24313726, 0.13725491, 0.17254902, 1)
 theme_override_colors/font_focus_color = Color(0.24313726, 0.13725491, 0.17254902, 1)
 theme_override_colors/font_pressed_color = Color(0.24313726, 0.13725491, 0.17254902, 1)
 theme_override_colors/font_hover_color = Color(0.24313726, 0.13725491, 0.17254902, 1)
-theme_override_fonts/font = ExtResource("2_p3fck")
+theme_override_fonts/font = ExtResource("2_tseak")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_klylv")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4gxqj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_twnyg")
 button_mask = 3
-text = "Start"
+text = "Restart"
 expand_icon = true
 
 [node name="quit_button" type="Button" parent="VBoxContainer" unique_id=1256388815]
@@ -108,7 +108,7 @@ theme_override_colors/font_color = Color(0.24313726, 0.13725491, 0.17254902, 1)
 theme_override_colors/font_focus_color = Color(0.24313726, 0.13725491, 0.17254902, 1)
 theme_override_colors/font_pressed_color = Color(0.24313726, 0.13725491, 0.17254902, 1)
 theme_override_colors/font_hover_color = Color(0.24313726, 0.13725491, 0.17254902, 1)
-theme_override_fonts/font = ExtResource("2_p3fck")
+theme_override_fonts/font = ExtResource("2_tseak")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_p3fck")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_55kwv")
@@ -128,27 +128,28 @@ offset_right = 60.0
 offset_bottom = 94.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.92156863, 0.8980392, 0.80784315, 1)
-theme_override_fonts/font = ExtResource("2_p3fck")
+theme_override_fonts/font = ExtResource("2_tseak")
 theme_override_font_sizes/font_size = 72
-text = "Continuous Cut"
+text = "You died!"
 
 [node name="Label2" type="Label" parent="." unique_id=387050705]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.39891976
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -205.0
-offset_top = -118.0
-offset_right = 205.0
-offset_bottom = -51.0
+anchor_bottom = 0.39891976
+offset_left = -94.5
+offset_top = -33.5
+offset_right = 94.5
+offset_bottom = 33.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.92156863, 0.8980392, 0.80784315, 1)
-theme_override_fonts/font = ExtResource("2_p3fck")
+theme_override_fonts/font = ExtResource("2_tseak")
 theme_override_font_sizes/font_size = 24
-text = "by Logan MacAskill and Jack Seales"
+text = "Try Again?"
+metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="VBoxContainer/start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/restart_button" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit_button" to="." method="_on_quit_button_pressed"]
