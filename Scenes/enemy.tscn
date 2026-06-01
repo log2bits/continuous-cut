@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://p7h7woyl27ft"]
 
 [ext_resource type="Texture2D" uid="uid://cdh4ytv0ffk2y" path="res://assets/sprites/enemy.png" id="1_a8hw6"]
+[ext_resource type="Script" uid="uid://brxf5s03ptr16" path="res://scripts/enemy.gd" id="1_md0e3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jg4ye"]
 radius = 4.0
 height = 16.0
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1766995639]
+script = ExtResource("1_md0e3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=785483160]
 texture = ExtResource("1_a8hw6")
