@@ -6,8 +6,8 @@ extends Node2D
 @export var switch_direction_chance: float = 0.7
 @export var skip_chance: float = 0.3
 
-var screen_height = 648 / 4.0 / 2.0
-var screen_width = 1152 / 4.0 / 2.0
+var screen_height = 648 / 2.0 / 2.0
+var screen_width = 1152 / 2.0 / 2.0
 var current_time = 0.0
 var direction: float = 1.0
 
@@ -34,5 +34,5 @@ func _on_timer_timeout() -> void:
 func spawn_mob(pos: Vector2) -> void:
 	var new_mob = preload("res://scenes/enemy.tscn").instantiate()
 	new_mob.global_position = pos
-	new_mob.player = get_node("Player")
+	new_mob.player = get_parent().get_node("Player")
 	add_child(new_mob)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://2a18rpqknoec"]
 
-[ext_resource type="Script" uid="uid://dldyqrskb4pt1" path="res://Scripts/title_screen.gd" id="1_klylv"]
-[ext_resource type="FontFile" uid="uid://dbrln1wqrwok2" path="res://assets/Fonts/dogicapixel.ttf" id="2_p3fck"]
+[ext_resource type="Script" uid="uid://dldyqrskb4pt1" path="res://scripts/title_screen.gd" id="1_klylv"]
+[ext_resource type="FontFile" uid="uid://dbrln1wqrwok2" path="res://assets/fonts/dogicapixel.ttf" id="2_p3fck"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klylv"]
 bg_color = Color(0.92156863, 0.8980392, 0.80784315, 1)

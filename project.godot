@@ -27,3 +27,10 @@ colors="*uid://btx814us2rssx"
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 environment/defaults/default_clear_color=Color(0.24313726, 0.13725491, 0.17254902, 1)
+
+[shader_globals]
+
+mouse_world_pos={
+"type": "vec2",
+"value": Vector2(0, 0)
+}
