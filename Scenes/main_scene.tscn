@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://cmesnsomldwbi"]
 
-[ext_resource type="PackedScene" uid="uid://b548bppnpn02l" path="res://scenes/player.tscn" id="1_1k4gi"]
-[ext_resource type="Script" uid="uid://dta814xiwrbqe" path="res://scripts/game.gd" id="1_gubc5"]
-[ext_resource type="Script" uid="uid://dmiceh8sy7m03" path="res://scripts/player.gd" id="2_6fy3g"]
+[ext_resource type="PackedScene" uid="uid://b548bppnpn02l" path="res://Scenes/player.tscn" id="1_1k4gi"]
+[ext_resource type="Script" uid="uid://dta814xiwrbqe" path="res://Scripts/game.gd" id="1_gubc5"]
+[ext_resource type="Script" uid="uid://dmiceh8sy7m03" path="res://Scripts/player.gd" id="2_6fy3g"]
+[ext_resource type="AudioStream" uid="uid://bom2c3fhnkonw" path="res://assets/Music/bg_music.mp3" id="4_x6ack"]
 
 [node name="Game" type="Node2D" unique_id=1932867374]
 script = ExtResource("1_gubc5")
@@ -14,3 +15,8 @@ script = ExtResource("2_6fy3g")
 zoom = Vector2(4, 4)
 
 [node name="Timer" type="Timer" parent="." unique_id=822883402]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=197427915]
+stream = ExtResource("4_x6ack")
+volume_db = -14.84
+autoplay = true

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://robajfnebdlq" path="res://Scripts/death_screen.gd" id="1_rwas2"]
 [ext_resource type="FontFile" uid="uid://dbrln1wqrwok2" path="res://assets/Fonts/dogicapixel.ttf" id="2_tseak"]
 [ext_resource type="AudioStream" uid="uid://3uw7rj6t3xp4" path="res://assets/SFX/click_sfx.mp3" id="3_tseak"]
+[ext_resource type="AudioStream" uid="uid://bj5fkggj7mp6q" path="res://assets/Music/title_music.mp3" id="4_amiou"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klylv"]
 bg_color = Color(0.92156863, 0.8980392, 0.80784315, 1)
@@ -152,10 +153,15 @@ theme_override_font_sizes/font_size = 24
 text = "Try Again?"
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1124533978]
+[node name="click_player" type="AudioStreamPlayer2D" parent="." unique_id=1124533978]
 position = Vector2(692, 706)
 stream = ExtResource("3_tseak")
 pitch_scale = 2.52
+
+[node name="music" type="AudioStreamPlayer2D" parent="." unique_id=1737581184]
+stream = ExtResource("4_amiou")
+volume_db = -10.494
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/restart_button" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit_button" to="." method="_on_quit_button_pressed"]
