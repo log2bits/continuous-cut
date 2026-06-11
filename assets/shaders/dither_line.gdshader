@@ -1,7 +1,5 @@
 shader_type canvas_item;
 
-uniform float transparency : hint_range(0.0, 1.0) = 0.5;
-
 float bayer4(vec2 pos) {
     int x = int(mod(pos.x, 4.0));
     int y = int(mod(pos.y, 4.0));
@@ -16,9 +14,8 @@ float bayer4(vec2 pos) {
 }
 
 void fragment() {
-    vec4 col = texture(TEXTURE, UV);
-    float alpha = UV.x;
-    alpha *= 1.0 - transparency;
+    vec4 col = COLOR;
+    float alpha = (1.0 - abs(UV.x * 2.0 - 1.0)) * 0.5;
     float threshold = bayer4(FRAGCOORD.xy);
     col.a *= step(threshold, alpha);
     COLOR = col;

@@ -1,4 +1,5 @@
 [gd_scene format=3 uid="uid://cmesnsomldwbi"]
+
 [ext_resource type="PackedScene" uid="uid://b548bppnpn02l" path="res://scenes/player.tscn" id="1_1k4gi"]
 [ext_resource type="Script" uid="uid://dta814xiwrbqe" path="res://scripts/enemy_spawner.gd" id="1_gubc5"]
 [ext_resource type="Script" uid="uid://dmiceh8sy7m03" path="res://scripts/player.gd" id="2_6fy3g"]
@@ -6,35 +7,74 @@
 [ext_resource type="Shader" uid="uid://c8otwmpq8ba0k" path="res://assets/shaders/dither_line.gdshader" id="4_gubc5"]
 [ext_resource type="Shader" uid="uid://d3atlltmufhsu" path="res://assets/shaders/dither_circle.gdshader" id="5_rt2n2"]
 [ext_resource type="AudioStream" uid="uid://bom2c3fhnkonw" path="res://assets/Music/bg_music.mp3" id="6_x6ack"]
+[ext_resource type="Script" path="res://scripts/score_label.gd" id="7_score"]
+[ext_resource type="FontFile" uid="uid://dbrln1wqrwok2" path="res://assets/Fonts/dogicapixel.ttf" id="8_score"]
+[ext_resource type="Script" path="res://scripts/lives_label.gd" id="9_lives"]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rt2n2"]
 shader = ExtResource("4_gubc5")
-shader_parameter/transparency = 0.5
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c16ls"]
 shader = ExtResource("5_rt2n2")
 shader_parameter/mouse_screen_pos = Vector2(0, 0)
-shader_parameter/transparency = 0.5
 shader_parameter/viewport_size = Vector2(0, 0)
-shader_parameter/falloff_scale = 1.0
+shader_parameter/falloff_radius = 0.5
+
 [node name="Game" type="Node2D" unique_id=1932867374]
+
 [node name="Player" parent="." unique_id=640957625 instance=ExtResource("1_1k4gi")]
 script = ExtResource("2_6fy3g")
+
 [node name="Camera" type="Camera2D" parent="Player" unique_id=1507944311]
 zoom = Vector2(2, 2)
+
 [node name="Slash" type="Node2D" parent="." unique_id=73399351]
 script = ExtResource("3_pu3yx")
+
 [node name="Line2D" type="Line2D" parent="Slash" unique_id=553435350]
 material = SubResource("ShaderMaterial_rt2n2")
+width = 4.0
+default_color = Color(0.92156863, 0.8980392, 0.80784315, 1)
 texture_mode = 2
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
+
 [node name="GuideLine2D" type="Line2D" parent="Slash" unique_id=297759939]
 material = SubResource("ShaderMaterial_c16ls")
 width = 2.0
+default_color = Color(0.92156863, 0.8980392, 0.80784315, 1)
+
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=1045904414]
 script = ExtResource("1_gubc5")
+
 [node name="Timer" type="Timer" parent="EnemySpawner" unique_id=822883402]
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=197427915]
 stream = ExtResource("6_x6ack")
 volume_db = -14.84
 autoplay = true
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=410025001]
+
+[node name="ScoreLabel" type="Label" parent="UI" unique_id=410025002]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 316.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(0.92156863, 0.8980392, 0.80784315, 1)
+theme_override_fonts/font = ExtResource("8_score")
+theme_override_font_sizes/font_size = 24
+text = "Score: 0"
+script = ExtResource("7_score")
+
+[node name="LivesLabel" type="Label" parent="UI" unique_id=410025003]
+offset_left = 16.0
+offset_top = 44.0
+offset_right = 316.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0.92156863, 0.8980392, 0.80784315, 1)
+theme_override_fonts/font = ExtResource("8_score")
+theme_override_font_sizes/font_size = 24
+text = "Lives: 3"
+script = ExtResource("9_lives")

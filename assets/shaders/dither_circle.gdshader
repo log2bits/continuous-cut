@@ -1,10 +1,8 @@
 shader_type canvas_item;
 
 uniform vec2 mouse_screen_pos;
-uniform float transparency : hint_range(0.0, 1.0) = 0.5;
-
 uniform vec2 viewport_size;
-uniform float falloff_scale : hint_range(0.1, 5.0) = 1.0;
+uniform float falloff_radius : hint_range(0.1, 5.0) = 0.5;
 
 
 float bayer4(vec2 pos) {
@@ -21,14 +19,13 @@ float bayer4(vec2 pos) {
 }
 
 void fragment() {
-    vec4 col = texture(TEXTURE, UV);
-    float radius = length(mouse_screen_pos - vec2(viewport_size * 0.5));
+    vec4 col = COLOR;
+    float screen_radius = length(mouse_screen_pos - viewport_size * 0.5);
     float dist = distance(FRAGCOORD.xy, mouse_screen_pos);
-    float alpha = (1.0 - clamp(dist / (radius * falloff_scale), 0.0, 1.0)) * (1.0 - transparency);
+    float alpha = 1.0 - clamp(dist / (screen_radius * falloff_radius), 0.0, 1.0);
     if (alpha <= 0.0) {
         discard;
     }
-    float threshold = bayer4(FRAGCOORD.xy);
-    col.a = col.a * step(threshold, alpha);
+    col.a = step(bayer4(FRAGCOORD.xy), alpha);
     COLOR = col;
 }

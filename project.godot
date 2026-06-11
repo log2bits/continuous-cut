@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 [autoload]
 
 colors="*uid://btx814us2rssx"
+Score="*res://scripts/score.gd"
 
 [physics]
 

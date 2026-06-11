@@ -153,6 +153,22 @@ theme_override_font_sizes/font_size = 24
 text = "Try Again?"
 metadata/_edit_use_anchors_ = true
 
+[node name="ScoreLabel" type="Label" parent="." unique_id=387050706]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 155.0
+offset_right = 150.0
+offset_bottom = 185.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.92156863, 0.8980392, 0.80784315, 1)
+theme_override_fonts/font = ExtResource("2_tseak")
+theme_override_font_sizes/font_size = 32
+text = "Score: 0"
+horizontal_alignment = 1
+
 [node name="click_player" type="AudioStreamPlayer2D" parent="." unique_id=1124533978]
 position = Vector2(692, 706)
 stream = ExtResource("3_tseak")

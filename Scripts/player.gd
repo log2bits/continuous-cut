@@ -3,6 +3,9 @@ extends CharacterBody2D
 
 @export var health: int = 3
 
+func _ready() -> void:
+	add_to_group("player")
+
 func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
 	rotation += PI / 2.0
