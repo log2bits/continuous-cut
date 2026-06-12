@@ -32,7 +32,7 @@ func _on_timer_timeout() -> void:
 	spawn_mob(spawn_pos)
 
 func spawn_mob(pos: Vector2) -> void:
-	var new_mob = preload("res://scenes/enemy.tscn").instantiate()
+	var new_mob = preload("res://Scenes/enemy.tscn").instantiate()
 	new_mob.global_position = pos
 	new_mob.player = get_parent().get_node("Player")
 	add_child(new_mob)
