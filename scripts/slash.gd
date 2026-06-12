@@ -11,6 +11,8 @@ var combo: int = 0
 var time_since_cut: float = 0.0
 @onready var line: Line2D = $Line2D
 @onready var guide_line: Line2D = $GuideLine2D
+@onready var cut_sound = $CutSound
+
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -71,6 +73,7 @@ func _check_cuts() -> void:
 			Score.total += amount
 			time_since_cut = 0.0
 			_spawn_score_popup(enemy.global_position, amount)
+			cut_sound.play()
 			enemy.queue_free()
 
 func _spawn_score_popup(pos: Vector2, amount: int) -> void:

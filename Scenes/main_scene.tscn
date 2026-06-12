@@ -1,15 +1,16 @@
 [gd_scene format=3 uid="uid://cmesnsomldwbi"]
 
-[ext_resource type="PackedScene" uid="uid://b548bppnpn02l" path="res://scenes/player.tscn" id="1_1k4gi"]
-[ext_resource type="Script" uid="uid://dta814xiwrbqe" path="res://scripts/enemy_spawner.gd" id="1_gubc5"]
-[ext_resource type="Script" uid="uid://dmiceh8sy7m03" path="res://scripts/player.gd" id="2_6fy3g"]
-[ext_resource type="Script" uid="uid://f2gy3yyuuu5u" path="res://scripts/slash.gd" id="3_pu3yx"]
+[ext_resource type="PackedScene" uid="uid://b548bppnpn02l" path="res://Scenes/player.tscn" id="1_1k4gi"]
+[ext_resource type="Script" uid="uid://dta814xiwrbqe" path="res://Scripts/enemy_spawner.gd" id="1_gubc5"]
+[ext_resource type="Script" uid="uid://dmiceh8sy7m03" path="res://Scripts/player.gd" id="2_6fy3g"]
+[ext_resource type="Script" uid="uid://f2gy3yyuuu5u" path="res://Scripts/slash.gd" id="3_pu3yx"]
 [ext_resource type="Shader" uid="uid://c8otwmpq8ba0k" path="res://assets/shaders/dither_line.gdshader" id="4_gubc5"]
 [ext_resource type="Shader" uid="uid://d3atlltmufhsu" path="res://assets/shaders/dither_circle.gdshader" id="5_rt2n2"]
-[ext_resource type="AudioStream" uid="uid://bom2c3fhnkonw" path="res://assets/Music/bg_music.mp3" id="6_x6ack"]
-[ext_resource type="Script" path="res://scripts/score_label.gd" id="7_score"]
+[ext_resource type="AudioStream" uid="uid://by2pu4348753f" path="res://assets/SFX/creatorshome-tear-a-paper-328149.mp3" id="6_76v2p"]
+[ext_resource type="Script" uid="uid://bgebhvqg4mubo" path="res://scripts/score_label.gd" id="7_score"]
+[ext_resource type="AudioStream" uid="uid://b70d4h4pk8c8u" path="res://assets/Music/fassounds-good-night-lofi-cozy-chill-music-160166.mp3" id="8_76v2p"]
 [ext_resource type="FontFile" uid="uid://dbrln1wqrwok2" path="res://assets/Fonts/dogicapixel.ttf" id="8_score"]
-[ext_resource type="Script" path="res://scripts/lives_label.gd" id="9_lives"]
+[ext_resource type="Script" uid="uid://du13ra0yde2w6" path="res://scripts/lives_label.gd" id="9_lives"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rt2n2"]
 shader = ExtResource("4_gubc5")
@@ -45,13 +46,19 @@ material = SubResource("ShaderMaterial_c16ls")
 width = 2.0
 default_color = Color(0.92156863, 0.8980392, 0.80784315, 1)
 
+[node name="CutSound" type="AudioStreamPlayer2D" parent="Slash" unique_id=311021200]
+stream = ExtResource("6_76v2p")
+volume_db = -25.435
+pitch_scale = 2.26
+max_polyphony = 15
+
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=1045904414]
 script = ExtResource("1_gubc5")
 
 [node name="Timer" type="Timer" parent="EnemySpawner" unique_id=822883402]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=197427915]
-stream = ExtResource("6_x6ack")
+stream = ExtResource("8_76v2p")
 volume_db = -14.84
 autoplay = true
 
